@@ -1,0 +1,34 @@
+<div class="cart" *ngIf="pokemons$ | async as pokemons">
+  <div class="cart__content-container">
+    <!-- ugly BEM here, need to restructure html -->
+    <div class="cart__title">Added to cart:</div>
+    <div class="cart__content">
+      <mat-list
+        *ngIf="pokemons?.length; else emptyCart"
+        role="list"
+        class="pokemon-list__container"
+      >
+        <app-list-item
+          @fadeAnimation
+          *ngFor="let pokemon of pokemons"
+          (listItemClick)="removeFromCart(pokemon)"
+          [showButton]="true"
+          [pokemon]="pokemon"
+        >
+          <mat-icon inline>remove_circle</mat-icon>
+        </app-list-item>
+      </mat-list>
+      <ng-template #emptyCart>Cart is empty, please add pokemons</ng-template>
+    </div>
+  </div>
+  <div class="cart__actions">
+    <button
+      *ngIf="pokemons.length"
+      mat-flat-button
+      color="secondary"
+      (click)="clearCart()"
+    >
+      Clear
+    </button>
+  </div>
+</div>

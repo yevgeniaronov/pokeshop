@@ -1,0 +1,44 @@
+.mat-list-item {
+  height: unset !important;
+}
+
+.pokemon-item {
+  display: flex;
+
+  ::ng-deep {
+    .mat-list-item-content {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+  justify-content: center;
+  color: #034b5091;
+
+  width: 250px;
+  margin: 1rem;
+  max-height: 20vh;
+
+  font-size: x-large;
+  font-weight: 800;
+
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  border-radius: 15px;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    margin-right: -16px; // usually a bad thing, prefer doing this over overriding mat styles
+    color: #696969;
+    align-self: flex-end;
+    height: 40px;
+    button {
+      font-size: 36px;
+    }
+  }
+}

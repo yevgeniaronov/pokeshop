@@ -1,0 +1,14 @@
+<div class="home" *ngIf="pokemons$ | async as pokemons">
+  <p class="pokemon-list__title">Pokemons list ({{ pokemons.length }}):</p>
+  <mat-list role="list" class="pokemon-list__container">
+    <app-list-item
+      @fadeAnimation
+      *ngFor="let pokemon of pokemons"
+      [showButton]="checkIsAdded(pokemon) | async"
+      (listItemClick)="addToCart($event)"
+      [pokemon]="pokemon"
+    >
+      <mat-icon inline>add_circle</mat-icon>
+    </app-list-item>
+  </mat-list>
+</div>

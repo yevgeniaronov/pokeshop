@@ -1,0 +1,13 @@
+@import "./../../assets/styles/mixins.scss";
+
+.cart {
+  @include page-container;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+  height: calc(100% - 12vh);
+  &__content {
+    display: flex;
+    justify-content: center;
+  }
+}

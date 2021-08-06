@@ -1,0 +1,17 @@
+@import "./../../assets/styles/mixins.scss";
+
+.home {
+  @include page-container;
+  .pokemon-list {
+    &__title {
+      font-size: x-large;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+    }
+  }
+}

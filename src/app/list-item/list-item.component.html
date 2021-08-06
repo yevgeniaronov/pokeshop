@@ -1,0 +1,12 @@
+<mat-list-item role="listitem" class="pokemon-item">
+  <div class="pokemon-item__button">
+    <button *ngIf="showButton" (click)="onClick()" mat-icon-button>
+      <ng-content></ng-content>
+    </button>
+  </div>
+
+  <div class="pokemon-item__content">
+    <img [src]="pokemon.image" />
+    <div>{{ pokemon.name | titlecase }}</div>
+  </div>
+</mat-list-item>
